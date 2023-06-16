@@ -10,7 +10,7 @@
               <div class="card-header">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Add Psychology
+                  Añadir psicologa
                 </button>
 
                 <!-- Modal -->
@@ -24,31 +24,42 @@
                       <div class="modal-body">
                       <form class="col d-flex flex-wrap" action="http://localhost/SkylAb-158/Psychology/apirest/controllers/psicologas.php?op=insert" method="post">
                         <div class="mb-1 col-12">
-                          <label for="nombre_psico" class="form-label">Nombre Psicologa: </label>
+                          <label for="nombre_psicologas" class="form-label">Nombre Psicologa: </label>
                           <input 
                             type="text"
-                            id="nombre_psico"
-                            name="nombre_psico"
+                            id="nombre_psicologas"
+                            name="nombre_psicologas"
                             class="form-control"  
                           />
                         </div>
 
                         <div class="mb-1 col-12">
-                          <label for="edad_psico" class="form-label">Edad: </label>
+                          <label for="edad_psicologas" class="form-label">Edad: </label>
                           <input 
                             type="number"
-                            id="edad_psico"
-                            name="edad_psico"
+                            id="edad_psicologas"
+                            name="edad_psicologas"
                             class="form-control"  
                           />
                         </div>
 
                         <div class="mb-1 col-12">
-                          <label for="especialidad_psico" class="form-label">Especialidad: </label>
+                          <label for="especialidad" class="form-label">Especialidad: </label>
                           <input 
                             type="text"
-                            id="especialidad_psico"
-                            name="especialidad_psico"
+                            id="especialidad"
+                            name="especialidad"
+                            class="form-control"  
+                          
+                          />
+                        </div>
+
+                        <div class="mb-1 col-12">
+                          <label for="cargo" class="form-label"> Cargo: </label>
+                          <input 
+                            type="text"
+                            id="cargo"
+                            name="cargo"
                             class="form-control"  
                           
                           />
@@ -72,6 +83,7 @@
                     <th>Nombre</th>
                     <th>Edad</th>
                     <th>Especialidad</th>
+                    <th>Cargo</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -80,10 +92,11 @@
                         {                  
                     ?>
                   <tr>
-                    <td><?php echo $out-> id_psico; ?></td>
-                    <td><?php echo $out-> nombre_psico; ?></td>
-                    <td><?php echo $out-> edad_psico; ?></td>
-                    <td><?php echo $out-> especialidad_psico; ?></td>
+                    <td><?php echo $out-> id_psicologas; ?></td>
+                    <td><?php echo $out-> nombre_psicologas; ?></td>
+                    <td><?php echo $out-> edad_psicologas; ?></td>
+                    <td><?php echo $out-> especialidad; ?></td>
+                    <td><?php echo $out-> cargo; ?></td>
                   </tr>
                   <?php }?>
                   </tbody>

@@ -4,9 +4,9 @@ ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 
 error_reporting(E_ALL);
-    class Psicologa extends  Conectar{
+    class Psicologas extends Conectar{
 
-        public function getPsico(){
+        public function getPsicologas(){
             try {
                 $conectar = parent::Conexion();
                 parent::set_name();
@@ -18,7 +18,7 @@ error_reporting(E_ALL);
             }
         }
 
-        public function getPsicoId($id){
+        public function getPsicologasId($id){
             try {
                 $conectar = parent::Conexion();
                 parent::set_name();
@@ -31,19 +31,21 @@ error_reporting(E_ALL);
             }
         }
 
-        public function insertPsico($id_psico, $nombre_psico, $edad_psico, $especialidad_psico){
-            $id_psico= $_POST["id_psico"];
-            $nombre_psico = $_POST["nombre_psico"];
-            $edad_psico = $_POST["edad_psico"];
-            $especialidad_psico = $_POST["especialidad_psico"];
+        public function insertPsicologas($id_psicologas, $nombre_psicologas, $edad_psicologas, $especialidad, $cargo){
+            $id_psicologas= $_POST["id_psicologas"];
+            $nombre_psicologas = $_POST["nombre_psicologas"];
+            $edad_psicologas = $_POST["edad_psicologas"];
+            $especialidad= $_POST["especialidad"];
+            $cargo = $_POST["cargo"];
             $conectar=parent::Conexion();
             parent::set_name();
-            $stm="INSERT INTO psicologas(id_psico,nombre_psico,edad_psico,especialidad_psico) VALUES(?,?,?,?)";
+            $stm="INSERT INTO psicologas(id_psicologas,nombre_psicologas,edad_psicologas,especialidad,cargo) VALUES(?,?,?,?,?)";
             $stm=$conectar->prepare($stm);
-            $stm->bindValue(1,$id_psico);
-            $stm->bindValue(2,$nombre_psico);
-            $stm->bindValue(3,$edad_psico);
-            $stm->bindValue(4,$especialidad_psico);
+            $stm->bindValue(1,$id_psicologas);
+            $stm->bindValue(2,$nombre_psicologas);
+            $stm->bindValue(3,$edad_psicologas);
+            $stm->bindValue(4,$especialidad);
+            $stm->bindValue(5,$cargo);
             $stm->execute();
             return $stm->fetchAll(PDO::FETCH_ASSOC);
     

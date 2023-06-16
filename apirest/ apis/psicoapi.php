@@ -2,16 +2,18 @@
 
         $psicologas = '[
             {
-            "id_psico": 1,
-            "nombre_psico": "Angie Suarez",
-            "edad_psico": "26",
-            "especialidad_psico": "Psico-analisis"
+            "id_psicologas": 1,
+            "nombre_psicologas": "Angie Suarez",
+            "edad_psicologas": "26",
+            "especialidad": "Psico-analisis"
+            "cargo": "Jefe de area"
             },
             {
-            "id_psico": 2,
-            "nombre_psico": "Vanessa",
-            "edad_psico": "25",
-            "especialidad_psico": "Psicologia del desarrollo"
+            "id_psicologas": 2,
+            "nombre_psicologas": "Vanessa",
+            "edad_psicologas": "25",
+            "especialidad": "Psicologia del desarrollo",
+            "cargo": "Jefe de area"
             }
         ]';
     
@@ -26,7 +28,7 @@
         or die("Ha sucedido un error inesperado en la conexion de la base de datos");
 
         foreach ($datosPsicologas as $psicologas) {
-            mysqli_query($conexion, "INSERT INTO psicologas (id_psico, nombre_psico, edad_psico, especialidad_psico) VALUES ('".$psicologas['id_psico']."','".$psicologas['nombre_psico']."','".$psicologas['edad_psico']."','".$psicologas['especialidad_psico']."')");
+            mysqli_query($conexion, "INSERT INTO psicologas (id_psicologas, nombre_psicologas, edad_psicologas, especialidad, cargo) VALUES ('".$psicologas['id_psicologas']."','".$psicologas['nombre_psicologas']."','".$psicologas['edad_psicologas']."','".$psicologas['especialidad']."','".$psicologas['cargo']."',)");
         }
 
         mysqli_close($conexion);
